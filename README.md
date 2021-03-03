@@ -4,7 +4,8 @@
 
 | Column               | Type     |  Options     |  Options      |
 | -------------------  | -------- | ------------ | ------------- |
-| email                | string   | null: false  |  nuique:true  |
+| email                | string   | null: false  | nuique :true  |
+| encrypted_password   | string   | null: false  |               |
 | nickname             | string   | null: false  |               | 
 | lastname_Full_width  | string   | null: false  |               |
 | firstname_Full_width | string   | null: false  |               |
@@ -26,24 +27,24 @@
 | product_condition_id      | integer            | null: false      |
 | category_id               | integer            | null: false      |
 | selling_price_id          | integer            | null: false      |
-| shipping_charges_id       | integer            | null: false      |
+| shipping_charges          | integer            | null: false      |
 | shipping_area_id          | integer            | null: false      |
 | days_to_ship_id           | integer            | null: false      |
-| user_id                   | references         | foreign_key:true |
+| user                      | references         | foreign_key:true |
 
 ### Association
 
-- has_many :item_users
-- has_many :users, through: item_users
+- has_one :item_users
+- berongs_to :user, through: item_user
 
--
+
 
 ## item_users テーブル
 
 | Column           | Type               |  Options          |
 | -----------------| ------------------ | ----------------- |
 | user             | references         | foreign_key: true |
-| selling_function | references         | foreign_key: true |
+| item             | references         | foreign_key: true |
 
 ### Association
 
@@ -55,13 +56,13 @@
 
 | Column           | Type               |  Options          |
 | -----------------| ------------------ | ----------------- |
-| postal_code      | integer            | null: false       |
+| postal_code      | integer            |                   |
 | prefectures_id   | integer            | null: false       |
 | municipality     | string             | null: false       |
 | address          | string             | null: false       |
 | building_name    | string             |                   |
 | phone_number     | integer            | null: false       |
-| user_id          | referemces         | foreign_key: true |
+| user_item        | referemces         | foreign_key: true |
 
 ### Association
 
