@@ -1,24 +1,65 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column               | Type     |  Options     |  Options      |
+| -------------------  | -------- | ------------ | ------------- |
+| email                | string   | null: false  |  nuique:true  |
+| password             | string   | null: false  |               |
+| nickname             | string   | null: false  |               | 
+| lastname_Full_width  | string   | null: false  |               |
+| firstname_Full_width | string   | null: false  |               |
+| lastname_kana        | string   | null: false  |               |
+| firstname_kana       | string   | null: false  |               |
+| birthday             | datetime | null: false  |               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_many :productpuchases
 
-* Configuration
+##  items テーブル
 
-* Database creation
 
-* Database initialization
+| Column                    | Type               |  Options     |
+| --------------------------| ------------------ | ------------ |
+| image                     | ActiveStorageで実装 | null: false  |
+| productname               | text               | null: false  |
+| product_description       | string             | null: false  |
+| product_condition         | text               | null: false  |
+| category                  | string             | null: false  |
+| selling_price             | integer            | null: false  |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
+- has_one : productpuchase
 
-* Deployment instructions
+## Product_purchase テーブル
 
-* ...
+| Column           | Type               |  Options     |
+| -----------------| ------------------ | ------------ |
+| postal_code      | integer            | null: false  |
+| prefectures      | string             | null: false  |
+| municipality     | string             | null: false  |
+| address          | string             | null: false  |
+| building_name    | string             |              |
+| phone_number     | integer            | null: false  |
+
+### Association
+
+- berongs_to :user 
+- berongs_to :item
+- has_one :shippingaddress
+
+
+## shipping_address
+
+| Column                    | Type               |  Options     |
+| --------------------------| ------------------ | ------------ |
+| Burden_of_shipping_charge | string             | null: false  |
+| shipping_area             | string             | null: false  |
+| days_to_ship              | string             | null: false  |
+
+### Association
+
+- berongs_to :productpuchase
