@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :item_users
-- has_many :items, through: item_users
+- has_many :items
 
 ##  items テーブル
 
@@ -27,7 +27,7 @@
 | product_condition_id      | integer            | null: false      |
 | category_id               | integer            | null: false      |
 | selling_price_id          | integer            | null: false      |
-| shipping_charges          | integer            | null: false      |
+| shipping_charges_id       | integer            | null: false      |
 | shipping_area_id          | integer            | null: false      |
 | days_to_ship_id           | integer            | null: false      |
 | user                      | references         | foreign_key:true |
@@ -35,7 +35,7 @@
 ### Association
 
 - has_one :item_users
-- berongs_to :user, through: item_user
+- berongs_to :user 
 
 
 
@@ -56,12 +56,12 @@
 
 | Column           | Type               |  Options          |
 | -----------------| ------------------ | ----------------- |
-| postal_code      | integer            |                   |
+| postal_code      | string             | null: false       |
 | prefectures_id   | integer            | null: false       |
 | municipality     | string             | null: false       |
 | address          | string             | null: false       |
 | building_name    | string             |                   |
-| phone_number     | integer            | null: false       |
+| phone_number     | string             | null: false       |
 | user_item        | referemces         | foreign_key: true |
 
 ### Association

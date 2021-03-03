@@ -1,10 +1,10 @@
-<mxfile host="65bd71144e" modified="2021-03-03T08:28:15.907Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.2 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="48oOhHUjP-dgjViAdkK-" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-03-03T08:59:00.607Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.2 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="bZGWtD39SLbrtIiAydg0" version="14.2.4" type="embed">
     <diagram id="2VtEBtvGqYfnz0a4XjCa" name="ページ1">
-        <mxGraphModel dx="448" dy="2028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="379" dy="1909" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="280" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.998;entryY=0.767;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;sourcePerimeterSpacing=1;endArrow=ERoneToMany;endFill=0;targetPerimeterSpacing=0;strokeWidth=1;" edge="1" parent="1" source="158" target="277">
+                <mxCell id="280" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.998;entryY=0.767;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;sourcePerimeterSpacing=1;endArrow=ERoneToMany;endFill=0;targetPerimeterSpacing=0;strokeWidth=1;" parent="1" source="158" target="277" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="158" value="users テーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
@@ -28,7 +28,7 @@
                 <mxCell id="257" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="208" source="211" target="211" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="211" value="product_description  text  null: false&#10;&#10;product_condition_id  text  null:false&#10;&#10;category_id string  null: false&#10;&#10;selling_price_id  integer  null: false&#10;&#10;shipping_charges  integer  null: false&#10;&#10;shipping area_id  integer  null: false&#10;&#10;days_to_ship  integer  null: false&#10;&#10;user  references  foreign_key:true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="208" vertex="1">
+                <mxCell id="211" value="product_description  text  null: false&#10;&#10;product_condition_id  text  null:false&#10;&#10;category_id string  null: false&#10;&#10;selling_price_id  integer  null: false&#10;&#10;shipping_charges_id  integer  null: false&#10;&#10;shipping area_id  integer  null: false&#10;&#10;days_to_ship  integer  null: false&#10;&#10;user  references  foreign_key:true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="208" vertex="1">
                     <mxGeometry y="56" width="250" height="244" as="geometry"/>
                 </mxCell>
                 <mxCell id="225" value="shippingaddress  テーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
@@ -43,23 +43,23 @@
                         <mxPoint x="316.55999999999995" y="590.74" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="276" value="item_users  テーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                <mxCell id="276" value="item_users  テーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="110" y="360" width="240" height="86" as="geometry"/>
                 </mxCell>
-                <mxCell id="277" value="item  references  foreign_key: true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="276">
+                <mxCell id="277" value="item  references  foreign_key: true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="276" vertex="1">
                     <mxGeometry y="26" width="240" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="279" value="user  references foreign_key: true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="276">
+                <mxCell id="279" value="user  references foreign_key: true" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="276" vertex="1">
                     <mxGeometry y="56" width="240" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="283" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.42;entryY=1.14;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" edge="1" parent="1" source="270" target="279">
+                <mxCell id="283" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.42;entryY=1.14;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" parent="1" source="270" target="279" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="211" y="585"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="270" value="postal_code  integer  &#10;&#10;prefectures   string  null: false&#10;&#10;municipality   string  null: false&#10;&#10;address   string  null: false&#10;&#10;building_name   string  null: false&#10;&#10;phone_number  integer  null: false&#10;&#10;user_item  references  foreign_key:true&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="1">
+                <mxCell id="270" value="postal_code  string  null: false  &#10;&#10;prefectures   string  null: false&#10;&#10;municipality   string  null: false&#10;&#10;address   string  null: false&#10;&#10;building_name   string  &#10;&#10;phone_number  integer  null: false&#10;&#10;user_item  references  foreign_key:true&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="1" vertex="1">
                     <mxGeometry x="414" y="479" width="270" height="211" as="geometry"/>
                 </mxCell>
             </root>
