@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2021-03-03T08:59:00.607Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.2 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="bZGWtD39SLbrtIiAydg0" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-03-03T09:29:17.264Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.2 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="IMRWF2iAFpQHpu9fyXip" version="14.2.4" type="embed">
     <diagram id="2VtEBtvGqYfnz0a4XjCa" name="ページ1">
-        <mxGraphModel dx="379" dy="1909" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1190" dy="2028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -59,7 +59,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="270" value="postal_code  string  null: false  &#10;&#10;prefectures   string  null: false&#10;&#10;municipality   string  null: false&#10;&#10;address   string  null: false&#10;&#10;building_name   string  &#10;&#10;phone_number  integer  null: false&#10;&#10;user_item  references  foreign_key:true&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="1" vertex="1">
+                <mxCell id="270" value="postal_code  string  null: false  &#10;&#10;prefectures   string  null: false&#10;&#10;municipality   string  null: false&#10;&#10;address   string  null: false&#10;&#10;building_name   string  &#10;&#10;phone_number  integer  null: false&#10;&#10;item_user  references  foreign_key:true&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="1" vertex="1">
                     <mxGeometry x="414" y="479" width="270" height="211" as="geometry"/>
                 </mxCell>
             </root>
