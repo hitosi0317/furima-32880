@@ -3,12 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :nickname, presence: true
-  validates :lastname_full_width, presence: true
-  validates :firstname_full_width, presence: true
-  validates :lastname_kana, presence: true
-  validates :firstname_kana, presence: true
-  validates :birthday, presence: true
+  
+  with_options presence: true do
+    validates :nickname
+    validates :lastname_full_width
+    validates :firstname_full_width
+    validates :lastname_kana
+    validates :firstname_kana
+    validates :birthday
+  end
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   FULL_WIDTH = /\A[ぁ-んァ-ン一-龥々]/.freeze

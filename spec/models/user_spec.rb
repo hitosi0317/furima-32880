@@ -71,14 +71,12 @@ RSpec.describe User, type: :model do
       end
 
       it 'lastname_full_widthが存在してもfirstname_full_widthがなければ登録できない' do
-        @user.lastname_full_width
         @user.firstname_full_width = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "Firstname full width can't be blank"
       end
 
       it 'firstname_full_widthが存在してもlastname_full_widthがなければ登録できない' do
-        @user.firstname_full_width
         @user.lastname_full_width = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "Lastname full width can't be blank"
@@ -106,6 +104,18 @@ RSpec.describe User, type: :model do
         @user.firstname_kana = 'こん'
         @user.valid?
         expect(@user.errors.full_messages).to include 'Firstname kana is invalid'
+      end
+
+      it 'lastname_kanaが空では登録できない' do
+        @user.lastname_kana = ""
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Lastname kana can't be blank"
+      end
+
+      it 'firstnama_kanaが空では登録できない' do
+        @user.firstname_kana = ""
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Firstname kana can't be blank"
       end
 
       it '重複したemailが存在する場合登録できない' do
