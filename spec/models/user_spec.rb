@@ -23,9 +23,9 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = 'hitosi7'
         expect(@user).to be_valid
       end
-      it 'lastname_full_widthとがfirstname_full_widthが全角(漢字, ひらがな, カタカナ)であれば登録できる' do
-        @user.lastname_full_width
-        @user.firstname_full_width
+      it 'lastname_full_widthとfirstname_full_widthが全角(漢字, ひらがな, カタカナ)であれば登録できる' do
+        @user.lastname_full_width = "山田やまだヤマダ"
+        @user.firstname_full_width = "太郎たろうタロウ"
         expect(@user).to be_valid
       end
       it 'lastname_kanaとfirstnam_kanaがカタカナであれば登録できる' do
@@ -123,12 +123,27 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
       end
 
-      it 'passwordは半角英数字を含めないと登録できない' do
+      it 'passwordは半角(英語)のみでは登録できない' do
         @user.password = 'aaaaaa'
         @user.password_confirmation = 'aaaaaa'
         @user.valid?
         expect(@user.errors.full_messages).to include 'Password is invalid'
       end
+
+      it 'passwordは半角(数字)のみでは登録できない' do
+        @user.password = '123456'
+        @user.password_confirmation = '123456'
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Password is invalid'
+      end
+
+      it 'passwordは全角ではでは登録できない' do
+        @user.password = '山田１２３４'
+        @user.password_confirmation = '山田１２３４'
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Password is invalid'
+      end
+
       it 'birstdayがからでは登録できない' do
         @user.birthday = ''
         @user.valid?
