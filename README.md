@@ -4,7 +4,7 @@
 
 | Column               | Type     |  Options     |  Options      |
 | -------------------  | -------- | ------------ | ------------- |
-| email                | string   | null: false  | nuique :true  |
+| email                | string   | null: false  | unique :true  |
 | encrypted_password   | string   | null: false  |               |
 | nickname             | string   | null: false  |               | 
 | lastname_Full_width  | string   | null: false  |               |
