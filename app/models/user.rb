@@ -21,4 +21,6 @@ class User < ApplicationRecord
   validates_format_of :firstname_full_width, with: FULL_WIDTH
   validates_format_of :lastname_kana, with: KANA
   validates_format_of :firstname_kana, with: KANA
+
+  has_many :items
 end
