@@ -56,6 +56,26 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Selling price is not included in the list')
       end
+
+      it '販売価格が全角文字では登録できないこと' do
+        binding.pry
+        @item.selling_price = '山田'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Selling price is not a number')
+      end
+
+      it '販売価格が半角英数混合では登録できない' do
+        @item.selling_price = '1111aa'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Selling price is not a number')
+      end
+
+      it '販売価格が英語では登録できない' do
+        @item.selling_price = 'aaaaa'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Selling price is not a number')
+      end
+
       it '販売価格があっても299円以下では登録できない' do
         @item.selling_price = '299'
         @item.valid?
