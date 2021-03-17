@@ -24,8 +24,8 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
       it 'lastname_full_widthとfirstname_full_widthが全角(漢字, ひらがな, カタカナ)であれば登録できる' do
-        @user.lastname_full_width = "山田やまだヤマダ"
-        @user.firstname_full_width = "太郎たろうタロウ"
+        @user.lastname_full_width = '山田やまだヤマダ'
+        @user.firstname_full_width = '太郎たろうタロウ'
         expect(@user).to be_valid
       end
       it 'lastname_kanaとfirstnam_kanaがカタカナであれば登録できる' do
@@ -71,11 +71,10 @@ RSpec.describe User, type: :model do
       end
 
       it 'passwordとpassword_confirmationの値が違う場合登録できない' do
-        @user.password = "yamada1"
-        @user.password_confirmation = "yamada2"
+        @user.password = 'yamada1'
+        @user.password_confirmation = 'yamada2'
         @user.valid?
         expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
-      
       end
 
       it 'lastname_full_widthが存在してもfirstname_full_widthがなければ登録できない' do
@@ -115,13 +114,13 @@ RSpec.describe User, type: :model do
       end
 
       it 'lastname_kanaが空では登録できない' do
-        @user.lastname_kana = ""
+        @user.lastname_kana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "Lastname kana can't be blank"
       end
 
       it 'firstnama_kanaが空では登録できない' do
-        @user.firstname_kana = ""
+        @user.firstname_kana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "Firstname kana can't be blank"
       end
