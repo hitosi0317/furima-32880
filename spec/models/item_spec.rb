@@ -32,7 +32,7 @@ RSpec.describe Item, type: :model do
       it '商品の状態がなければ登録できない' do
         @item.product_condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Product condition must be other than 1")
+        expect(@item.errors.full_messages).to include('Product condition must be other than 1')
       end
 
       it 'カテゴリーがなければ登録できない' do
@@ -40,11 +40,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
-      
+
       it '発送元の地域がなければ登録できない' do
         @item.shipping_area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping area must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping area must be other than 1')
       end
 
       it '配送料の負担がなければ登録できない' do
@@ -94,7 +94,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Selling price is not included in the list')
       end
       it '販売価格があっても10000000以上では登録できない' do
-        @item.selling_price = 10000000
+        @item.selling_price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Selling price is not included in the list')
       end
