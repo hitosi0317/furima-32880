@@ -24,7 +24,7 @@
     </div>
 
     
-   <% if user_signed_in? && @item.user_id%>
+   <% if user_signed_in? %>
    <% if @item.user_id == current_user.id %>
     <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
@@ -46,7 +46,7 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @item.product_name %></td>
+          <td class="detail-value"><%= @item.user.nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
