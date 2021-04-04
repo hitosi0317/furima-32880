@@ -86,7 +86,12 @@ RSpec.describe FormPay, type: :model do
       expect(@form_pay.errors.full_messages).to include("Phone number can't be blank")
     end
 
-    it 'phone_numberが半角数字１１文字以内であれば登録できること' do
+    it 'phone_numberが半角数字10文字なら登録できる' do
+      @form_pay.phone_number = 12_345_678_90
+      expect(@form_pay).to be_valid
+    end
+
+    it 'phone_numberが半角数字１１文字であれば登録できること' do
       @form_pay.phone_number = 12_345_678_900
       expect(@form_pay).to be_valid
     end

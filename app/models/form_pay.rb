@@ -5,10 +5,12 @@ class FormPay
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
-    validates :token, presence: true
+    validates :token
     validates :municipality
     validates :address
-    validates :phone_number, format: { with: /\A[0-9]+\z/ }
+    validates :phone_number, format: { with: /\A\d{10,11}\z/ }
+    validates :item_id
+    validates :user_id
   end
   validates :shipping_area_id, numericality: { other_than: 1, message: "Can't be blank" }
 
