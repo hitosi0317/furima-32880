@@ -4,8 +4,8 @@ FactoryBot.define do
     postal_code { '123-4567' }
     shipping_area_id { 15 }
     municipality { '大阪府' }
-    address { '青山1-1-1' }
+    address { '寝屋川市' }
+    building_name { '青山1-1-1' }
     phone_number { '09012345678' }
- 
   end
 end

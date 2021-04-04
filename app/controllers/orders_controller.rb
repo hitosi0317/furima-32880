@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only: [:move_index, :index, :create]
   before_action :authenticate_user!, only: [:index, :create]
   before_action :move_index, only: [:index, :create]
-  before_action :set_item, only: [:index, :create]
+  before_action :item_user_index, only: [:index, :create]
   def index
     @form_pay = FormPay.new
-    redirect_to root_path if current_user == @item.user
   end
 
   def create
@@ -36,12 +36,15 @@ class OrdersController < ApplicationController
     )
   end
 
-  def move_index
+  def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def move_index
     redirect_to root_path unless @item.order.nil?
   end
 
-  def set_item
-    @item = Item.find(params[:item_id])
+  def item_user_index
+    redirect_to root_path if current_user == @item.user
   end
 end
