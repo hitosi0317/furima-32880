@@ -6,5 +6,6 @@ FactoryBot.define do
     municipality { '大阪府' }
     address { '青山1-1-1' }
     phone_number { '09012345678' }
+ 
   end
 end

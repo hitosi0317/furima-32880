@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe FormPay, type: :model do
   describe '購入情報の保存' do
     before do
-      @form_pay = FactoryBot.build(:form_pay)
+      user = FactoryBot.create(:user)
+      item = FactoryBot.create(:item)
+      @form_pay = FactoryBot.build(:form_pay,user_id: user.id, item_id: item.id)
+      sleep(1)
     end
 
     it 'address以外の値が正しく入力されていれば登録できること' do
