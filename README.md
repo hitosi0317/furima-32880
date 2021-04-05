@@ -39,7 +39,7 @@
 
 
 
-## item_users テーブル
+## order テーブル
 
 | Column           | Type               |  Options          |
 | -----------------| ------------------ | ----------------- |
@@ -52,7 +52,7 @@
 - belongs_to :item
 - has_one :shippingaddress
 
-## shippingaddress テーブル
+## shipping テーブル
 
 | Column           | Type               |  Options          |
 | -----------------| ------------------ | ----------------- |
@@ -66,4 +66,4 @@
 
 ### Association
 
-- belongs_to :item_user
+- belongs_to :order
