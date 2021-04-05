@@ -6,7 +6,7 @@ RSpec.describe FormPay, type: :model do
       user = FactoryBot.create(:user)
       item = FactoryBot.create(:item)
       @form_pay = FactoryBot.build(:form_pay, user_id: user.id, item_id: item.id)
-      sleep(1)
+      sleep(0.5)
     end
 
     describe '購入情報の保存' do
@@ -15,7 +15,7 @@ RSpec.describe FormPay, type: :model do
           expect(@form_pay).to be_valid
         end
 
-        it 'buildkng_nameはなくても登録できる' do
+        it 'building_nameはなくても登録できる' do
           expect(@form_pay).to be_valid
         end
 
@@ -31,6 +31,17 @@ RSpec.describe FormPay, type: :model do
       end
 
       context '購入保存できない場合' do
+        it 'user_idがないと登録できないこと' do
+          @form_pay.user_id = nil
+          @form_pay.valid?
+          expect(@form_pay.errors.full_messages).to include("User can't be blank")
+        end
+
+        it 'item_idがないと登録できないこと' do
+          @form_pay.item_id = nil
+          @form_pay.valid?
+          expect(@form_pay.errors.full_messages).to include("Item can't be blank")
+        end
         it 'tokenが空では登録できないこと' do
           @form_pay.token = ''
           @form_pay.valid?
