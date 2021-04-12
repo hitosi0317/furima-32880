@@ -33,5 +33,3 @@ namespace :deploy do
 end
 lock "~> 3.16.0"
 
-set :application, "furama-32880"
-set :repo_url, "git@example.com:hitosi0317/furima-32880.git"
