@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
+  before_action :search_product, only: [:category_search,:search, :index, :show]
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :order_index, only: [:edit, :update]
-  before_action :move_to_index, except: [:index, :show, :new, :create]
+  before_action :move_to_index, except: [:index, :show, :new, :create, :search,:category_search]
 
   def index
     @item = Item.order('created_at DESC')
@@ -22,7 +23,18 @@ class ItemsController < ApplicationController
   end
 
   def show
+  end
 
+  def search
+    @item = Item.search(params[:keyword])
+  end
+
+  def category_search
+    
+    @results = @p.result
+    if @results[0] != nil
+      @category_id = Category.find(@results[0].category_id).name 
+    end
   end
 
   def edit
@@ -57,5 +69,9 @@ class ItemsController < ApplicationController
 
   def order_index
     redirect_to root_path unless @item.order.nil?
+  end
+
+  def search_product
+   @p = Item.ransack(params[:q])
   end
 end
