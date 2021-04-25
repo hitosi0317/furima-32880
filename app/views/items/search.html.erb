@@ -1,0 +1,55 @@
+<%= render "shared/header" %>
+<div class='item-contents'>
+
+<%if params[:keyword] == ""%>
+   <%= link_to 'TopPageへ戻る', root_path, class: "subtitle" %>
+<%elsif @item[0] != nil%>
+   <%= link_to 'TopPageへ戻る', root_path, class: "subtitle" %>
+    <h2 class='title'><%= params[:keyword]%>に関連する商品が<%= @item.length%>件見つかりました</h2>
+    
+  <% else%>
+     <%= link_to 'TopPageへ戻る', root_path, class: "subtitle" %>
+  <h2 class='title'><%= params[:keyword]%>に関連する商品が見つかりませんでした</h2>
+  <%end%>
+  
+ 
+
+   
+    <ul class='item-lists'>
+     
+      <% @item.each do |item|%>
+      <li class='list'>
+        <%= link_to  item_path(item.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag item.image, class: "item-img" %>
+
+          <%if item.order %>
+          <div class='sold-out'>
+            <span>Sold Out!!</span>
+          </div>
+          <% end %>
+
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.product_name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= item.selling_price %>円<br><%= item.shipping_charge.name %></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+
+    <% end %>
+    </ul>
+
+
+
+</div>
+
+<%= render "shared/footer" %>
