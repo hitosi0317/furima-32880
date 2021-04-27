@@ -1,5 +1,6 @@
+if (document.URL.match( /new/ )) {
 window.addEventListener('load', function (){
-if ( document.getElementById('input')){
+
 
 
 
@@ -14,5 +15,5 @@ priceInput.addEventListener("input", () => {
     const value_result = inputValue * 0.1
     profit.innerHTML = (Math.floor(inputValue - value_result));
 })
-}
 })
+}
